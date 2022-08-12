@@ -8,7 +8,7 @@ module.exports = {
 
         if (!queue || !queue.playing) return inter.reply({ content: `❌ - No music currently playing`, ephemeral: true });
 
-        if (!queue.tracks[0]) return inter.reply({ content: `❌ - There is no more music in the queue after this one`, ephemeral: false });
+        if (!queue.tracks[0]) return inter.reply({ content: `❌ - There is no more music in the queue after this one`, ephemeral: true });
 
         await queue.shuffle();
 

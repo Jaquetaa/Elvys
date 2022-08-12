@@ -6,9 +6,9 @@ module.exports = {
     async execute({ inter }) {
         const queue = player.getQueue(inter.guildId);
 
-        if (!queue || !queue.playing) return inter.reply({ content: `❌ - No music currently playing`, ephemeral: false });
+        if (!queue || !queue.playing) return inter.reply({ content: `❌ - No music currently playing`, ephemeral: true });
 
-        if (!queue.previousTracks[1]) return inter.reply({ content: `❌ - There was no music being played before`, ephemeral: false });
+        if (!queue.previousTracks[1]) return inter.reply({ content: `❌ - There was no music being played before`, ephemeral: true });
 
         await queue.back();
 

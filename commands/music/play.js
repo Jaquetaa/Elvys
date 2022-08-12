@@ -20,7 +20,7 @@ module.exports = {
             searchEngine: QueryType.AUTO
         });
 
-        if (!res || !res.tracks.length) return inter.reply({ content: `❌ - No results found for your search...`, ephemeral: false });
+        if (!res || !res.tracks.length) return inter.reply({ content: `❌ - No results found for your search...`, ephemeral: true });
 
         const queue = await player.createQueue(inter.guild, {
             metadata: inter.channel,

@@ -10,5 +10,5 @@ module.exports = async ({  inter, queue }) => {
 
     const success = queue.setVolume(vol);
 
-    return inter.reply({ content:success ? `🔊 - The volume has been set to **${vol}**/**${maxVol}**%` : `❌ - Something went wrong`, ephemeral: false});
+    return inter.reply({ content:success ? `🔊 - The volume has been set to **${vol}**/**${maxVol}**%` : `❌ - Something went wrong`, ephemeral: true});
 }

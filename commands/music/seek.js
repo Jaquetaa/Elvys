@@ -20,7 +20,7 @@ module.exports = {
 
         const timeToMS = ms(inter.options.getString('time'));
 
-        if (timeToMS >= queue.current.durationMS) return inter.reply({ content:`❌ - That is not a valid time`, ephemeral: true });
+        if (timeToMS >= queue.current.durationMS) return inter.reply({ content:`❌ - That is not a valid time to skip to on this song`, ephemeral: true });
 
         await queue.seek(timeToMS);
 

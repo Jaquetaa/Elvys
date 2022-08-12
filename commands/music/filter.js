@@ -18,7 +18,7 @@ module.exports = {
     async execute({ inter, client }) {
         const queue = player.getQueue(inter.guildId);
 
-        if (!queue || !queue.playing) return inter.reply({ content: `❌ - No music currently playing`, ephemeral: false });
+        if (!queue || !queue.playing) return inter.reply({ content: `❌ - No music currently playing`, ephemeral: true });
 
         const actualFilter = queue.getFiltersEnabled()[0];
 
