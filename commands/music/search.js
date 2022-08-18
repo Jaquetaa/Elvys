@@ -33,7 +33,7 @@ module.exports = {
         const embed = new EmbedBuilder()
         .setColor('#2b0632')
         .setAuthor({ name: `Results for ${song}`, iconURL: client.user.displayAvatarURL({ size: 1024, dynamic: true })})
-        .setDescription(`${maxTracks.map((track, i) => `**${i + 1}**. ${track.title} | ${track.author}`).join('\n')}\n\nSelect choice between **1** and **${maxTracks.length}** or type **cancel** to cancel the search`)
+        .setDescription(`${maxTracks.map((track, i) => `**${i + 1}**. ${track.title} | ${track.author}`).join('\n')}\n\nSelect choice between **1** and **${maxTracks.length}** or type **cancel** to cancel`)
         .setTimestamp()
         .setFooter({ text: '🔍', iconURL: inter.member.avatarURL({ dynamic: true })})
 
@@ -50,7 +50,7 @@ module.exports = {
             if (query.content.toLowerCase() === 'cancel') return inter.followUp({ content: `✅ - The search was cancelled`, ephemeral: false }), collector.stop();
 
             const value = parseInt(query);
-            if (!value || value <= 0 || value > maxTracks.length) return inter.followUp({ content: `❌ - That is not a valid number... It has to be a value between **1** and **${maxTracks.length}**`, ephemeral: true });
+            if (!value || value <= 0 || value > maxTracks.length) return inter.followUp({ content: `❌ - That is not a valid number... It has to be a value between **1** and **${maxTracks.length}**`, ephemeral: false });
 
             collector.stop();
 

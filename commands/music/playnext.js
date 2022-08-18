@@ -26,9 +26,9 @@ module.exports = {
             searchEngine: QueryType.AUTO
         });
 
-        if (!res || !res.tracks.length) return inter.reply({ content: `❌ - No results found for your search...`, ephemeral: true });
+        if (!res || !res.tracks.length) return inter.reply({ content: `❌ - No results found for your search...`, ephemeral: false });
 
-       if (res.playlist) return inter.reply({ content: `❌ - This command does not support playlists`, ephemeral: true });
+       if (res.playlist) return inter.reply({ content: `❌ - This command does not support playlists`, ephemeral: false });
 
         queue.insert(res.tracks[0], 0)
 

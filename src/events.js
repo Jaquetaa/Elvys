@@ -11,38 +11,16 @@ player.on('connectionError', (queue, error) => {
 player.on('trackStart', (queue, track) => {
     if (!client.config.opt.loopMessage && queue.repeatMode !== 0) return;
     const embed = new EmbedBuilder()
+    .setAuthor({name: `🎧 - Now playing!`, iconURL: track.requestedBy.avatarURL()})
+    .setDescription(`__Song:__ **${track.title}**\n__Channel:__ **${queue.connection.channel.name}**`)
     .setColor('#2b0632')
-    .setAuthor({name: `🎧 - Now playing ${track.title} in ${queue.connection.channel.name}`})
-    .setTimestamp()
-    .setFooter({ text: '🎧', iconURL: inter.member.avatarURL({ dynamic: true })});
 
-
-    const back = new ButtonBuilder()
-    .setLabel('Back')
-    .setCustomId(JSON.stringify({ffb: 'back'}))
-    .setStyle('Danger')
-
-    const skip = new ButtonBuilder()
-    .setLabel('Skip')
-    .setCustomId(JSON.stringify({ffb: 'skip'}))
-    .setStyle('Danger')
-
-    const resumepause = new ButtonBuilder()
-    .setLabel('Resume & Pause')
-    .setCustomId(JSON.stringify({ffb: 'resume&pause'}))
-    .setStyle('Success')
-
-    const loop = new ButtonBuilder()
-    .setLabel('Loop')
-    .setCustomId(JSON.stringify({ffb: 'loop'}))
-    .setStyle('Primary')
-    
-    const queuebutton = new ButtonBuilder()
-    .setLabel('Queue')
-    .setCustomId(JSON.stringify({ffb: 'queue'}))
+    const controller = new ButtonBuilder()
+    .setLabel('// Open Controller //')
+    .setCustomId(JSON.stringify({ffb: 'Controller'}))
     .setStyle('Primary')
 
-    const row1 = new ActionRowBuilder().addComponents(back, loop, resumepause, queuebutton, skip)
+    const row1 = new ActionRowBuilder().addComponents(controller)
     queue.metadata.send({ embeds: [embed], components: [row1] })
 });
 

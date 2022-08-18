@@ -10,7 +10,7 @@ module.exports = {
 
         if (!queue) return inter.reply({ content: `❌ - No music currently playing`, ephemeral: true });
 
-        if (!queue.tracks[0]) return  inter.reply({ content: `❌ - There is no more music in the queue after this one`, ephemeral: true });
+        if (!queue.tracks[0]) return  inter.reply({ content: `❌ - There is no more music in the queue after this one`, ephemeral: false });
 
         const methods = ['', '🔁', '🔂'];
 

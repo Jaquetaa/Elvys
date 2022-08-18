@@ -6,5 +6,5 @@ module.exports = async ({  inter, queue }) => {
     if (!success) queue.setPaused(true);
     
 
-    return inter.reply({ content: `${success ? `✅ - Current music ${queue.current.title} resumed` : `✅ - Current music ${queue.current.title} paused`}`, ephemeral: false});
+    return inter.reply({ content: `${success ? `✅ - The current song: ${queue.current.title} was resumed` : `✅ - The current song: ${queue.current.title} was paused`}`, ephemeral: false});
 }

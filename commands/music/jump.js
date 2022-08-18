@@ -25,8 +25,8 @@ module.exports = {
 
         const queue = player.getQueue(inter.guildId);
 
-        if (!queue || !queue.playing) return inter.reply({ content: `❌ - No music currently playing`, ephemeral: true });
-        if (!track && !number) inter.reply({ content: `❌ - You have to use one of the options to jump to a song`, ephemeral: true });
+        if (!queue || !queue.playing) return inter.reply({ content: `❌ - No music currently playing`, ephemeral: false });
+        if (!track && !number) inter.reply({ content: `❌ - You have to use one of the options to jump to a song`, ephemeral: false });
 
             if (track) {
         for (let song of queue.tracks) {

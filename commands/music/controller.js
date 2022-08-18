@@ -56,7 +56,7 @@ module.exports = {
          const loop = new ButtonBuilder()
          .setLabel('Loop')
          .setCustomId(JSON.stringify({ffb: 'loop'}))
-         .setStyle('Primary')
+         .setStyle('Secondary')
 
          const np = new ButtonBuilder()
          .setLabel(' Now Playing ')
@@ -66,7 +66,7 @@ module.exports = {
          const queuebutton = new ButtonBuilder()
          .setLabel('Queue')
          .setCustomId(JSON.stringify({ffb: 'queue'}))
-         .setStyle('Primary')
+         .setStyle('Secondary')
 
 
          const row1 = new ActionRowBuilder().addComponents(volumedown, resumepause, volumeup)

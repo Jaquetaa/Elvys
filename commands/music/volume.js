@@ -22,7 +22,7 @@ module.exports = {
         if (!queue) return inter.reply({ content: `❌ - No music currently playing`, ephemeral: true });
         const vol = inter.options.getNumber('volume')
 
-        if (queue.volume === vol) return inter.reply({ content: `⚠️ - The volume is already on ${queue.volume}`, ephemeral: true });
+        if (queue.volume === vol) return inter.reply({ content: `⚠️ - The volume is already on ${queue.volume}`, ephemeral: false });
 
         const success = queue.setVolume(vol);
 

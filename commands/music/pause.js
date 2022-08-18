@@ -8,9 +8,9 @@ module.exports = {
 
         if (!queue) return inter.reply({ content: `❌ - No music currently playing`, ephemeral: true });
         
-        if(queue.connection.paused) return inter.reply({content: '⚠️ - The song is currently paused!', ephemeral: true})
+        if(queue.connection.paused) return inter.reply({content: '⚠️ - The track is currently paused!', ephemeral: true})
 
-        if(queue.connection.paused) return inter.reply({content: `⚠️ - The song is currently paused!`, ephemeral: true})
+        if(queue.connection.paused) return inter.reply({content: `⚠️ - The track is currently paused!`, ephemeral: true})
 
         const success = queue.setPaused(true);
         

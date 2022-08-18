@@ -21,10 +21,10 @@ module.exports = {
     execute({ inter }) {
         const queue = player.getQueue(inter.guildId);
 
-        if (!queue || !queue.playing) return inter.reply({ content: `❌ - No music currently playing`, ephemeral: true });
+        if (!queue || !queue.playing) return inter.reply({ content: `❌ - No music currently playing`, ephemeral: false });
         switch (inter.options._hoistedOptions.map(x => x.value).toString()) {
             case 'enable_loop_queue': {
-                if (queue.repeatMode === 1) return inter.reply({ content:`❌ - You must first disable the current music in the loop mode`, ephemeral: true });
+                if (queue.repeatMode === 1) return inter.reply({ content:`❌ - You must first disable the current music in the loop mode`, ephemeral: false });
 
                 const success = queue.setRepeatMode( QueueRepeatMode.QUEUE);
 
@@ -38,7 +38,7 @@ module.exports = {
                 break
             }
             case 'enable_loop_song': {
-                if (queue.repeatMode === 2) return inter.reply({ content:`❌ - You must first disable the current music in the loop mode`, ephemeral: true });
+                if (queue.repeatMode === 2) return inter.reply({ content:`❌ - You must first disable the current music in the loop mode`, ephemeral: false });
 
                 const success = queue.setRepeatMode( QueueRepeatMode.TRACK);
                 
