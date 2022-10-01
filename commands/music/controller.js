@@ -19,9 +19,9 @@ module.exports = {
 
     
       const embed = new EmbedBuilder()
-       .setTitle('Controller 🎮')
+       .setTitle('🎮 | Controller')
        .setDescription('Control the current song with the buttons below :)')
-       .setColor('#2b0632')
+       .setColor('#870000')
        .setTimestamp()
        .setFooter({ text: '🎮', iconURL: inter.member.avatarURL({ dynamic: true })});
 

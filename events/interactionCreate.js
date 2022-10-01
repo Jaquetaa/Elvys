@@ -5,12 +5,12 @@ module.exports = (client, inter) => {
         const DJ = client.config.opt.DJ;
         const command = client.commands.get(inter.commandName);
 
-    if (!command) return inter.reply({ embeds: [ new EmbedBuilder().setColor('#2b0632').setDescription('❌ - Something went wrong')], ephemeral: true, }), client.slash.delete(inter.commandName)
-    if (command.permissions && !inter.member.permissions.has(command.permissions)) return inter.reply({ embeds: [ new EmbedBuilder().setColor('#2b0632').setDescription(`❌ - This command is reserved For members with \`${DJ.roleName}\` `)], ephemeral: true, })
-    if (DJ.enabled && DJ.commands.includes(command) && !inter.member._roles.includes(inter.guild.roles.cache.find(x => x.name === DJ.roleName).id)) return inter.reply({ embeds: [ new EmbedBuilder().setColor('#2b0632').setDescription(`❌ - You need \`${command.permissions}\` permissions to use this command!`)], ephemeral: true, })
+    if (!command) return inter.reply({ embeds: [ new EmbedBuilder().setColor('#870000').setDescription('❌ - Something went wrong')], ephemeral: true, }), client.slash.delete(inter.commandName)
+    if (command.permissions && !inter.member.permissions.has(command.permissions)) return inter.reply({ embeds: [ new EmbedBuilder().setColor('#870000').setDescription(`❌ - This command is reserved For members with \`${DJ.roleName}\` `)], ephemeral: true, })
+    if (DJ.enabled && DJ.commands.includes(command) && !inter.member._roles.includes(inter.guild.roles.cache.find(x => x.name === DJ.roleName).id)) return inter.reply({ embeds: [ new EmbedBuilder().setColor('#870000').setDescription(`❌ - You need \`${command.permissions}\` permissions to use this command!`)], ephemeral: true, })
     if (command.voiceChannel) {
-            if (!inter.member.voice.channel) return inter.reply({ embeds: [ new EmbedBuilder().setColor('#2b0632').setDescription(`⚠️ - You are not in a voice channel`)], ephemeral: true, })
-            if (inter.guild.members.me.voice.channel && inter.member.voice.channel.id !== inter.guild.members.me.voice.channel.id) return inter.reply({ embeds: [ new EmbedBuilder().setColor('#2b0632').setDescription(`❌ - You are not in the same voice channel as the bot`)], ephemeral: true, })
+            if (!inter.member.voice.channel) return inter.reply({ embeds: [ new EmbedBuilder().setColor('#870000').setDescription(`⚠️ - You are not in a voice channel`)], ephemeral: true, })
+            if (inter.guild.members.me.voice.channel && inter.member.voice.channel.id !== inter.guild.members.me.voice.channel.id) return inter.reply({ embeds: [ new EmbedBuilder().setColor('#870000').setDescription(`❌ - You are not in the same voice channel as the bot`)], ephemeral: true, })
        }
         command.execute({ inter, client });
     }

@@ -9,7 +9,7 @@ module.exports = {
         const commands = client.commands.filter(x => x.showHelp !== false);
 
         const embed = new EmbedBuilder()
-        .setColor('#2b0632')
+        .setColor('#870000')
         .setAuthor({ name: client.user.username, iconURL: client.user.displayAvatarURL({ size: 2048, dynamic: true }) })
         .setDescription('Help pannel for the bot!')
         .addFields([ { name: `Commands (Core) - 3`, value: "| `invite` | `ping` | `help` |" } ])

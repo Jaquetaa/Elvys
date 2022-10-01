@@ -13,10 +13,10 @@ player.on('trackStart', (queue, track) => {
     const embed = new EmbedBuilder()
     .setAuthor({name: `🎧 - Now playing!`, iconURL: track.requestedBy.avatarURL()})
     .setDescription(`__Song:__ **${track.title}**\n__Channel:__ **${queue.connection.channel.name}**`)
-    .setColor('#2b0632')
+    .setColor('#870000')
 
     const controller = new ButtonBuilder()
-    .setLabel('// Open Controller //')
+    .setLabel('// Open Private Controller //')
     .setCustomId(JSON.stringify({ffb: 'Controller'}))
     .setStyle('Primary')
 

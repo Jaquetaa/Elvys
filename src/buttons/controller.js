@@ -1,8 +1,8 @@
 const { ApplicationCommandOptionType, ActionRowBuilder, ButtonBuilder, EmbedBuilder } = require('discord.js');
 module.exports = async ({client, inter}) => { 
         const embed = new EmbedBuilder()
-        .setColor('#2b0632')
-        .setAuthor({name: `🎮 - Controller`})
+        .setColor('#870000')
+        .setAuthor({name: `🎮 | Controller`})
         .setDescription(`Control the current song with the buttons below :)`)
         .setTimestamp()
         .setFooter({ text: '🎮'});

@@ -26,7 +26,7 @@ module.exports = {
         .setThumbnail(track.thumbnail)
         .setDescription(`Volume **${queue.volume}**%\nDuration **${trackDuration}**\nProgress ${progress}\nLoop mode **${methods[queue.repeatMode]}**\nRequested by ${track.requestedBy}`)
         .setFooter({ text: '🎵', iconURL: inter.member.avatarURL({ dynamic: true })})
-        .setColor('#2b0632')
+        .setColor('#870000')
         .setTimestamp()
 
         const volumeup = new ButtonBuilder()

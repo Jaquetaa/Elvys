@@ -31,7 +31,7 @@ module.exports = {
         const maxTracks = res.tracks.slice(0, 10);
 
         const embed = new EmbedBuilder()
-        .setColor('#2b0632')
+        .setColor('#870000')
         .setAuthor({ name: `Results for ${song}`, iconURL: client.user.displayAvatarURL({ size: 1024, dynamic: true })})
         .setDescription(`${maxTracks.map((track, i) => `**${i + 1}**. ${track.title} | ${track.author}`).join('\n')}\n\nSelect choice between **1** and **${maxTracks.length}** or type **cancel** to cancel`)
         .setTimestamp()
