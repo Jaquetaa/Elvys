@@ -16,9 +16,9 @@ player.on('trackStart', (queue, track) => {
     .setColor('#870000')
 
     const controller = new ButtonBuilder()
-    .setLabel('// Open Private Controller //')
+    .setLabel('Controller')
     .setCustomId(JSON.stringify({ffb: 'Controller'}))
-    .setStyle('Primary')
+    .setStyle('Danger')
 
     const row1 = new ActionRowBuilder().addComponents(controller)
     queue.metadata.send({ embeds: [embed], components: [row1] })
