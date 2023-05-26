@@ -2,8 +2,8 @@ const { ApplicationCommandOptionType, ActionRowBuilder, ButtonBuilder, EmbedBuil
 module.exports = async ({client, inter}) => { 
         const embed = new EmbedBuilder()
         .setColor('#870000')
-        .setAuthor({name: `🎮 | Controller`})
-        .setDescription(`Control the current song with the buttons below :)`)
+        .setAuthor({name: `🎮 | Private Controller`})
+        .setDescription(`Control the current song with the buttons below:`)
         .setTimestamp()
         .setFooter({ text: '🎮'});
 

@@ -16,7 +16,7 @@ player.on('trackStart', (queue, track) => {
     .setColor('#870000')
 
     const controller = new ButtonBuilder()
-    .setLabel('Controller')
+    .setLabel('Private Controller')
     .setCustomId(JSON.stringify({ffb: 'Controller'}))
     .setStyle('Danger')
 
